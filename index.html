@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Light and Sound Memory Game</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <h1>Light and Sound Memory Game</h1>
+
+    <p>
+      Welcome to the game! Repeat back the pattern by pressing buttons.
+    </p>
+
+    <button id="startBtn" onclick="startGame()">
+      Start
+    </button>
+    <button id="stopBtn" class="hidden" onclick="stopGame()">
+      Stop
+    </button>
+
+    <button id="timerBtn" class="hidden">
+  ⏳ 100
+    </button>
+
+    <div id="gameButtonArea">
+      <audio src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fmixkit-fast-small-sweep-transition-166.mp3?v=1616251804077" id="audio1"></audio>
+      <audio src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fmixkit-arcade-retro-game-over-213.mp3?v=1616258119485" id="audio2"></audio>
+      <audio src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fmixkit-alarm-tone-996.mp3?v=1616258110487" id="audio3"></audio>
+      <audio src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fmixkit-wild-lion-animal-roar-6.mp3?v=1616258128758" id="audio4"></audio>
+      <audio src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fmixkit-trumpets-and-strings-off-beat-2286.mp3?v=1616258256658" id="audio5"></audio>
+      <audio src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fmixkit-retro-game-notification-212.mp3?v=1616258153046" id="audio6"></audio>
+      <audio src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fmixkit-dog-barking-twice-1.mp3?v=1616258171447" id="audio7"></audio>
+      <audio src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fmixkit-trumpets-and-strings-off-beat-2286.mp3?v=1616258256658" id="audio8"></audio>
+  
+
+    
+    
+      <button
+        id="button1"
+        onclick="guess(1)"
+        onmousedown="startTone(1)"
+        onmouseup="stopTone()"
+      >
+<!--             <img
+              class="hidden"  
+           id="image1"
+          src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fgreenapple.jpg?v=1616125174066"
+          alt="green apple"
+          width="150"
+          height="100"
+        /> -->
+      </button>
+      <button
+        id="button2"
+        onclick="guess(2)"
+        onmousedown="startTone(2)"
+        onmouseup="stopTone()"
+      >
+<!--          <img
+          class="hidden"
+              id="image2"
+          src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fblueberries.jpg?v=1616125934277"
+          alt="blueberries"
+          width="150"
+          height="100"
+        /> -->
+      </button>
+      <button
+        id="button3"
+        onclick="guess(3)"
+        onmousedown="startTone(3)"
+        onmouseup="stopTone()"
+      >
+         
+<!--       <img
+          class="hidden"
+           id="image3"
+          src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fraspeberries.jpg?v=1616125840281"
+          alt="raspberries"
+          width="150"
+          height="100"
+        /> -->
+      </button>
+      <button
+        id="button4"
+        onclick="guess(4)"
+        onmousedown="startTone(4)"
+        onmouseup="stopTone()"
+      >
+            
+<!--       <img
+          class="hidden"
+           id="image4"
+          src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Flemons.jpg?v=1616125128067"
+          alt="lemons"
+          width="150"
+          height="100"
+        /> -->
+      </button>
+      <button
+        id="button5"
+        onclick="guess(5)"
+        onmousedown="startTone(5)"
+        onmouseup="stopTone()"
+      >
+<!--           
+      <img
+          class="hidden"
+           id="image5"
+          src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fgrapes.jpg?v=1616125289643"
+          alt="grapes"
+          width="150"
+          height="100"
+        /> -->
+      
+      </button>
+      <button
+        id="button6"
+        onclick="guess(6)"
+        onmousedown="startTone(6)"
+        onmouseup="stopTone()"
+      >
+<!--          <img
+          class="hidden"
+              id="image6"
+          src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Foranges.jpg?v=1616125055943"
+          alt="oranges"
+          width="150"
+          height="100"
+        /> -->
+      </button>
+<!--       <button
+        id="button7"
+        onclick="guess(7)"
+        onmousedown="startTone(7)"
+        onmouseup="stopTone()"
+      >      -->
+<!--       <img
+          class="hidden"
+           id="image7"
+          src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fcherries.jpg?v=1616126007636"
+          alt="cherries"
+          width="150"
+          height="100"
+        /> -->
+      
+      
+<!--       </button> -->
+<!--       <button
+        id="button8"
+        onclick="guess(8)"
+        onmousedown="startTone(8)"
+        onmouseup="stopTone()"
+      > -->
+<!--       <img
+          class="hidden"
+           id="image8"
+          src="https://cdn.glitch.com/d7cfc34e-45bf-4e2c-8e52-df69cc63e47a%2Fkiwi.jpg?v=1616126326335"
+          alt="kiwi"
+          width="150"
+          height="100"
+        /> -->
+<!--       </button> -->
+    </div>
+  </body>
+</html>
